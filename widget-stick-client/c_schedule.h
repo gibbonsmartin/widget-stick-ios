@@ -7,13 +7,14 @@
 #define c_schedule_h
 
 #include <stddef.h>
+#include <stdint.h>
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
 /**
- * Runs or updates the C schedule module with two string inputs and writes the status/result into output_buffer.
+ * Runs or updates the C schedule module with two string inputs and writes the status/result int32_to output_buffer.
  *
  * @param input1 First input parameter from text field 1.
  * @param input2 Second input parameter from text field 2.
@@ -21,7 +22,7 @@ extern "C" {
  * @param buffer_size Size of the output buffer in bytes.
  * @return 0 on success, non-zero on error.
  */
-int c_schedule_execute(const char *input1, const char *input2, char *output_buffer, size_t buffer_size);
+int32_t c_schedule_execute(const char *input1, const char *input2, char *output_buffer, size_t buffer_size);
 
 /**
  * Performs a periodic/background tick for the C schedule module.
@@ -30,7 +31,7 @@ int c_schedule_execute(const char *input1, const char *input2, char *output_buff
  * @param buffer_size Size of the output buffer in bytes.
  * @return 0 on success, non-zero on error.
  */
-int c_schedule_background_tick(char *output_buffer, size_t buffer_size);
+int32_t c_schedule_background_tick(char *output_buffer, size_t buffer_size);
 
 #ifdef __cplusplus
 }

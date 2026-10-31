@@ -7,12 +7,14 @@
 #include <stdio.h>
 #include <string.h>
 #include <time.h>
+#include "socket_client.h"
+#include <stdint.h>
 
 static char s_last_input1[256] = "default";
 static char s_last_input2[256] = "60";
-static int s_run_count = 0;
+static int32_t s_run_count = 0;
 
-int c_schedule_execute(const char *input1, const char *input2, char *output_buffer, size_t buffer_size) {
+int32_t c_schedule_execute(const char *input1, const char *input2, char *output_buffer, size_t buffer_size) {
     if (output_buffer == NULL || buffer_size == 0) {
         return -1;
     }
@@ -41,6 +43,6 @@ int c_schedule_execute(const char *input1, const char *input2, char *output_buff
     return 0;
 }
 
-int c_schedule_background_tick(char *output_buffer, size_t buffer_size) {
+int32_t c_schedule_background_tick(char *output_buffer, size_t buffer_size) {
     return c_schedule_execute(s_last_input1, s_last_input2, output_buffer, buffer_size);
 }
