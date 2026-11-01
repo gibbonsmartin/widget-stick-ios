@@ -16,7 +16,7 @@
 
 #define BUFFER_SIZE 4096
 
-int client_transfer(const char *host, const char *port) {
+int client_transfer(const char *host, const char *port, const char *buff_tx, size_t buff_tx_sz, char *buff_rx, size_t buff_rx_sz) {
     struct addrinfo hints, *res, *p;
     int sockfd = -1;
     int status;
@@ -57,8 +57,7 @@ int client_transfer(const char *host, const char *port) {
     printf("Connected to %s:%s\n", host, port);
 
     // 4. Send data to the server
-    const char *message = "Hello from Linux C TCP client!\n";
-    ssize_t bytes_sent = send(sockfd, message, strlen(message), 0);
+    ssize_t bytes_sent = send(sockfd, buff_tx, buff_tx_sz, 0);
     if (bytes_sent == -1) {
         perror("send failed");
         close(sockfd);
@@ -66,15 +65,13 @@ int client_transfer(const char *host, const char *port) {
     }
 
     // 5. Receive response from the server
-    char buffer[BUFFER_SIZE];
-    ssize_t bytes_received = recv(sockfd, buffer, sizeof(buffer) - 1, 0);
+    ssize_t bytes_received = recv(sockfd, buff_rx, buff_rx_sz, 0);
     if (bytes_received < 0) {
         perror("recv failed");
     } else if (bytes_received == 0) {
         printf("Server closed the connection.\n");
     } else {
-        buffer[bytes_received] = '\0'; // Null-terminate received data
-        printf("Received (%zd bytes): %s", bytes_received, buffer);
+        printf("Received (%zd bytes): %.64s", bytes_received, buff_rx);
     }
 
     // 6. Clean up

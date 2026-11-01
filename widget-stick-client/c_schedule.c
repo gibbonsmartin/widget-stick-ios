@@ -30,15 +30,10 @@ int32_t c_schedule_execute(const char *input1, const char *input2, char *output_
 
     s_run_count++;
 
-    time_t now = time(NULL);
-    struct tm time_info;
-    localtime_r(&now, &time_info);
-    char time_str[32];
-    strftime(time_str, sizeof(time_str), "%H:%M:%S", &time_info);
-
-    snprintf(output_buffer, buffer_size,
-             "[%s] Schedule #%d: '%s' | '%s'",
-             time_str, s_run_count, s_last_input1, s_last_input2);
+    if (client_transfer(s_last_input1, s_last_input2, "hello", 6, output_buffer, buffer_size) < 0)
+    {
+        snprintf(output_buffer, buffer_size, "No response");
+    }
 
     return 0;
 }
