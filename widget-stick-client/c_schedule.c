@@ -30,7 +30,7 @@ int32_t c_schedule_execute(const char *input1, const char *input2, char *output_
 
     s_run_count++;
 
-    if (client_transfer(s_last_input1, s_last_input2, "hello", 6, output_buffer, buffer_size) < 0)
+    if (client_transfer(s_last_input1, s_last_input2, "hello", 6, output_buffer, buffer_size) <= 0)
     {
         snprintf(output_buffer, buffer_size, "No response");
     }

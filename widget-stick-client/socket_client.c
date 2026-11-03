@@ -55,7 +55,7 @@ int client_transfer(const char *host, const char *port, const char *buff_tx, siz
     }
 
     printf("Connected to %s:%s\n", host, port);
-
+#if 1
     // 4. Send data to the server
     ssize_t bytes_sent = send(sockfd, buff_tx, buff_tx_sz, 0);
     if (bytes_sent == -1) {
@@ -63,7 +63,7 @@ int client_transfer(const char *host, const char *port, const char *buff_tx, siz
         close(sockfd);
         return EXIT_FAILURE;
     }
-
+#endif
     // 5. Receive response from the server
     ssize_t bytes_received = recv(sockfd, buff_rx, buff_rx_sz, 0);
     if (bytes_received < 0) {

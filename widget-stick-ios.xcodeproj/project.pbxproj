@@ -8,6 +8,7 @@
 
 /* Begin PBXFileReference section */
 		245CF0FC3095037C00159F1B /* widget-stick-client.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "widget-stick-client.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		24C3F362309A6987004FF7FC /* widget-stick-ble-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "widget-stick-ble-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -17,6 +18,13 @@
 				Info.plist,
 			);
 			target = 245CF0FB3095037C00159F1B /* widget-stick-client */;
+		};
+		24C3F378309A6988004FF7FC /* Exceptions for "widget-stick-ble-app" folder in "widget-stick-ble-app" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 24C3F361309A6987004FF7FC /* widget-stick-ble-app */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
@@ -29,10 +37,23 @@
 			path = "widget-stick-client";
 			sourceTree = "<group>";
 		};
+		24C3F363309A6987004FF7FC /* widget-stick-ble-app */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				24C3F378309A6988004FF7FC /* Exceptions for "widget-stick-ble-app" folder in "widget-stick-ble-app" target */,
+			);
+			path = "widget-stick-ble-app";
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		245CF0F93095037C00159F1B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			files = (
+			);
+		};
+		24C3F35F309A6987004FF7FC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			files = (
 			);
@@ -44,6 +65,7 @@
 			isa = PBXGroup;
 			children = (
 				245CF0FD3095037C00159F1B /* widget-stick-client */,
+				24C3F363309A6987004FF7FC /* widget-stick-ble-app */,
 				000000000000000000000020 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -52,6 +74,7 @@
 			isa = PBXGroup;
 			children = (
 				245CF0FC3095037C00159F1B /* widget-stick-client.app */,
+				24C3F362309A6987004FF7FC /* widget-stick-ble-app.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -77,6 +100,24 @@
 			productReference = 245CF0FC3095037C00159F1B /* widget-stick-client.app */;
 			productType = "com.apple.product-type.application";
 		};
+		24C3F361309A6987004FF7FC /* widget-stick-ble-app */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 24C3F379309A6988004FF7FC /* Build configuration list for PBXNativeTarget "widget-stick-ble-app" */;
+			buildPhases = (
+				24C3F35E309A6987004FF7FC /* Sources */,
+				24C3F35F309A6987004FF7FC /* Frameworks */,
+				24C3F360309A6987004FF7FC /* Resources */,
+			);
+			buildRules = (
+			);
+			fileSystemSynchronizedGroups = (
+				24C3F363309A6987004FF7FC /* widget-stick-ble-app */,
+			);
+			name = "widget-stick-ble-app";
+			productName = "widget-stick-ble-app";
+			productReference = 24C3F362309A6987004FF7FC /* widget-stick-ble-app.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -88,6 +129,9 @@
 				LastUpgradeCheck = 2710;
 				TargetAttributes = {
 					245CF0FB3095037C00159F1B = {
+						CreatedOnToolsVersion = 27.1;
+					};
+					24C3F361309A6987004FF7FC = {
 						CreatedOnToolsVersion = 27.1;
 					};
 				};
@@ -107,6 +151,7 @@
 			projectRoot = "";
 			targets = (
 				245CF0FB3095037C00159F1B /* widget-stick-client */,
+				24C3F361309A6987004FF7FC /* widget-stick-ble-app */,
 			);
 		};
 /* End PBXProject section */
@@ -117,10 +162,20 @@
 			files = (
 			);
 		};
+		24C3F360309A6987004FF7FC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			files = (
+			);
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		245CF0F83095037C00159F1B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			files = (
+			);
+		};
+		24C3F35E309A6987004FF7FC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			files = (
 			);
@@ -325,6 +380,67 @@
 			};
 			name = Release;
 		};
+		24C3F37A309A6988004FF7FC /* Debug configuration for PBXNativeTarget "widget-stick-ble-app" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "widget-stick-ble-app/Info.plist";
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "This app uses Bluetooth to connect to and communicate with the BLE UART peripheral.";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.yourcompany.widget-stick-ble-app";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		24C3F37B309A6988004FF7FC /* Release configuration for PBXNativeTarget "widget-stick-ble-app" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "widget-stick-ble-app/Info.plist";
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "This app uses Bluetooth to connect to and communicate with the BLE UART peripheral.";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.yourcompany.widget-stick-ble-app";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -341,6 +457,14 @@
 			buildConfigurations = (
 				245CF1143095037D00159F1B /* Debug configuration for PBXNativeTarget "widget-stick-client" */,
 				245CF1153095037D00159F1B /* Release configuration for PBXNativeTarget "widget-stick-client" */,
+			);
+			defaultConfigurationName = Release;
+		};
+		24C3F379309A6988004FF7FC /* Build configuration list for PBXNativeTarget "widget-stick-ble-app" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				24C3F37A309A6988004FF7FC /* Debug configuration for PBXNativeTarget "widget-stick-ble-app" */,
+				24C3F37B309A6988004FF7FC /* Release configuration for PBXNativeTarget "widget-stick-ble-app" */,
 			);
 			defaultConfigurationName = Release;
 		};
